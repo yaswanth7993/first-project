@@ -16,4 +16,10 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
+          tags: - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          # Ikkada space lekunda 'my-app' ani ivvu
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-app:latest
